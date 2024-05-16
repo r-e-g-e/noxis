@@ -12,12 +12,13 @@ func hello(response http.ResponseWriter, request *http.Request) {
 
 func main() {
 	fmt.Println("Hello, World!")
-	http.HandleFunc("/", hello)
 
+	http.HandleFunc("/", hello)
 	port := os.Getenv("PORT")
 	if port == "" {
 		port = "8080"
 	}
+	port = ":" + port
 
 	http.ListenAndServe(port, nil)
 }

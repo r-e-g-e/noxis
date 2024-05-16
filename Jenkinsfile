@@ -4,7 +4,8 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'go build main.go'
+                sh 'echo "Hello World"'
+                sh 'go build'
             }
         }
     }
